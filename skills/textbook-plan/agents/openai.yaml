@@ -1,0 +1,4 @@
+interface:
+  display_name: "Textbook Plan"
+  short_description: "Plan Textbook changes from system evidence"
+  default_prompt: "Use $textbook-plan to turn this request into a repository-grounded implementation plan."

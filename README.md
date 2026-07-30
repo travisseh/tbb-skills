@@ -3,8 +3,16 @@
 Reusable AI-agent skills for planning, implementation review, pull-request
 follow-through, and product demos.
 
+The root [`CLAUDE.md`](CLAUDE.md) is a concise shared-context template for the
+five Textbook Technology application repositories. Copy it into each repository
+and keep the verified repo-specific details current.
+
 ## Included skills
 
+- `textbook-plan`: turn a request into a repository-grounded implementation
+  plan with explicit contracts and failure behavior.
+- `textbook-code-review`: review the full change set against Textbook-specific
+  correctness, integration, test, and approval rules.
 - `define-outcomes`: define a crisp target and independently gradeable rubric.
 - `ponytail`: find the smallest safe solution that works.
 - `code-review-pipeline`: run a complete pre-PR quality pass.
