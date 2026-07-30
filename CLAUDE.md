@@ -80,5 +80,5 @@ unknowns with verified facts. Do not put temporary ticket details here.
 - CodeRabbit is a first pass, not the approval gate. Resolve or refute each
   actionable finding with evidence, run CI on the final head, then obtain the
   required human review.
-- Use [`textbook-plan`](skills/textbook-plan/SKILL.md) before implementation and
-  [`textbook-code-review`](skills/textbook-code-review/SKILL.md) before a PR.
+- Use [`tbb-plan`](skills/tbb-plan/SKILL.md) before implementation and
+  [`tbb-review`](skills/tbb-review/SKILL.md) before a PR.

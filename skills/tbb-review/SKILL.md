@@ -1,9 +1,9 @@
 ---
-name: textbook-code-review
-description: Review a Textbook Technology change before a pull request, with repo-specific checks for legacy POS, Rails services, imports, financial rules, cross-repo contracts, CI, CodeRabbit, and human approval. Use after implementation and before a PR is opened or merged.
+name: tbb-review
+description: Review a Textbook Technology change against its plan or defined outcomes before a pull request, including repo-specific correctness, simplification, adversarial convergence, CI, CodeRabbit, and human approval. Use after implementation and before a PR is opened or merged.
 ---
 
-# Textbook Code Review
+# TBB Review
 
 Review the complete diff against its intended integration branch. Include
 staged, unstaged, and untracked files. Preserve unrelated user changes. Do not
@@ -11,8 +11,14 @@ commit, push, open or merge a PR, resolve threads, or alter Jira unless asked.
 
 ## 1. Reconstruct intent
 
-- Read `CLAUDE.md`, the ticket, plan, README, CI, and runtime pins.
-- Confirm acceptance criteria, non-goals, and affected repositories.
+- Read `CLAUDE.md`, the ticket, README, CI, and runtime pins.
+- Find the `tbb-plan` output and any `define-outcomes` rubric in the ticket, PR,
+  branch artifacts, or supplied context. Use them as the review oracle when they
+  exist: acceptance criteria, non-goals, contracts, checks, and rollout.
+- If neither exists, derive the minimum reviewable outcome from the ticket. Ask
+  only when missing intent makes correctness impossible to judge.
+- Treat the plan as a hypothesis, not proof. Flag both code that violates the
+  plan and plan assumptions contradicted by the repository.
 - Trace changed payloads and identifiers through every producer and consumer.
 - Flag unrelated scope and unverifiable assumptions.
 
@@ -45,7 +51,20 @@ partial-failure policy, quarantine, and operator recovery.
 - Review migrations for compatibility, existing-data safety, deploy order,
   rollback, and schema output.
 
-## 4. Verify by repository
+## 4. Delete unnecessary complexity
+
+Invoke `$ponytail-review` on the complete locked diff. It reviews complexity
+only, after the correctness pass.
+
+- Apply high-confidence `delete`, `stdlib`, `native`, `yagni`, and `shrink`
+  findings that preserve the plan or defined outcomes.
+- Never simplify away validation, data-loss protection, security,
+  accessibility, or the minimum meaningful test.
+- Report `net: -<N> lines possible`, or `Lean already. Ship.`
+
+If `$ponytail-review` is unavailable, apply those five checks directly.
+
+## 5. Verify by repository
 
 Run focused tests first, then the available full checks on the final head.
 
@@ -62,14 +81,18 @@ If no checked-in check exists, say so. Never report a skipped, retried-away, or
 unrun check as passing. Review whether tests accidentally make live network
 calls and whether CI runtime versions match local pins.
 
-## 5. Review the review
+## 6. Review to convergence
 
 1. Resolve or refute each actionable CodeRabbit comment with code or evidence.
-2. Run one fresh independent review of the final diff. Use
-   `adversarial-review-loop` when installed; otherwise reread the diff with no
-   access to the first review notes.
-3. Run CI on the final head without `[skip ci]`.
-4. Require the repository's human approval. Route business-rule questions to
+2. Invoke `$aos-adversarial-review-loop` on the complete locked scope. Use an
+   independent reviewer, fix or technically refute every Critical and Important
+   finding, and re-review until a round contains only Minor findings or none.
+   Surface a genuine impasse instead of looping forever.
+3. If that skill is unavailable, preserve the same independence and stop rule
+   with a fresh reviewer context. Never substitute author self-review.
+4. Re-run affected checks after the final review fix.
+5. Run CI on the final head without `[skip ci]`.
+6. Require the repository's human approval. Route business-rule questions to
    Ed, application-logic review to Josh, and infrastructure-sensitive changes
    to Earl as appropriate.
 
@@ -82,6 +105,8 @@ Lead with findings ordered by severity. Every finding needs:
 - why existing tests do not prevent it;
 - smallest safe fix.
 
-Then report scope reviewed, checks run, CI/CodeRabbit status, Theory/Hunch
-verification, New Relic or logging signal, and remaining risks. If there are no
-material findings, say `No material findings` and list any coverage gaps.
+Then report plan/outcome coverage, scope reviewed, ponytail net reduction,
+adversarial-review rounds and convergence, checks run, CI/CodeRabbit status,
+Theory/Hunch verification, New Relic or logging signal, and remaining risks. If
+there are no material findings, say `No material findings` and list any
+coverage gaps.

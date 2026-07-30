@@ -9,10 +9,12 @@ and keep the verified repo-specific details current.
 
 ## Included skills
 
-- `textbook-plan`: turn a request into a repository-grounded implementation
-  plan with explicit contracts and failure behavior.
-- `textbook-code-review`: review the full change set against Textbook-specific
-  correctness, integration, test, and approval rules.
+- `tbb-plan`: turn a request into a repository-grounded implementation
+  plan with explicit contracts, failure behavior, and a `ponytail` simplicity
+  pass.
+- `tbb-review`: review the full change set against Textbook-specific
+  correctness, the plan or defined outcomes, `ponytail-review`, adversarial
+  convergence, tests, and approval rules.
 - `define-outcomes`: define a crisp target and independently gradeable rubric.
 - `ponytail`: find the smallest safe solution that works.
 - `code-review-pipeline`: run a complete pre-PR quality pass.
@@ -45,6 +47,9 @@ Some skills depend on tools or services that must be configured separately:
   is explicitly requested.
 - `code-review-pipeline` uses `ponytail` when installed and includes a built-in
   fallback when it is not.
+- `tbb-plan` composes `ponytail`. `tbb-review` composes `ponytail-review` and
+  `aos-adversarial-review-loop`; both include concise built-in fallbacks when a
+  composed skill is unavailable.
 - `visual-plan` requires the Agent-Native Plans connector or its documented
   local-files mode.
 - `baby-the-pr` requires authenticated GitHub access.

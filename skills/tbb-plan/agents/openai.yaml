@@ -1,0 +1,4 @@
+interface:
+  display_name: "TBB Plan"
+  short_description: "Plan Textbook changes from system evidence"
+  default_prompt: "Use $tbb-plan to turn this request into a repository-grounded implementation plan."

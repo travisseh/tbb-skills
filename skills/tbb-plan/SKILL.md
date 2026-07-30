@@ -1,9 +1,9 @@
 ---
-name: textbook-plan
-description: Turn a Textbook Technology Jira ticket or feature request into a repository-grounded implementation plan. Use before coding work that may affect legacy POS logic, Rails services, imports, money, RabbitMQ/API contracts, or multiple repositories.
+name: tbb-plan
+description: Turn a Textbook Technology Jira ticket or feature request into the smallest safe repository-grounded implementation plan. Use before coding work that may affect legacy POS logic, Rails services, imports, money, RabbitMQ/API contracts, or multiple repositories.
 ---
 
-# Textbook Plan
+# TBB Plan
 
 Create a plan that another engineer or agent can execute without rediscovering
 the system. Planning is read-only unless the user explicitly asks for changes.
@@ -45,7 +45,20 @@ source/provenance. For imports, explicitly choose file-, school-, transaction-,
 or row-level atomicity. For external APIs, cover schema changes, pagination,
 timeouts, and bounded retries.
 
-## 4. Produce the implementation plan
+## 4. Ponytail the design
+
+Invoke `$ponytail` in full mode on the proposed approach. Use its ladder in
+order: delete the need, standard library, native platform, installed dependency,
+one line, then minimum custom code.
+
+Keep the shortest design that satisfies the acceptance criteria. Do not remove
+trust-boundary validation, data-loss protection, security, accessibility, or the
+smallest meaningful test. Record what was intentionally skipped and the
+measurable condition that would justify adding it later.
+
+If `$ponytail` is unavailable, apply the ladder directly.
+
+## 5. Produce the implementation plan
 
 Use this compact structure:
 
@@ -53,7 +66,7 @@ Use this compact structure:
 # <ticket>: <outcome>
 
 ## Decision summary
-<approach, key tradeoff, and open blocker>
+<smallest safe approach, ponytail cuts, key tradeoff, and open blocker>
 
 ## Flow and contracts
 <current flow -> changed flow; cross-repo payloads and invariants>

@@ -1,0 +1,4 @@
+interface:
+  display_name: "TBB Review"
+  short_description: "Review Textbook changes before PR"
+  default_prompt: "Use $tbb-review to review this complete change set against Textbook's system rules."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Textbook Code Review"
-  short_description: "Review Textbook changes before PR"
-  default_prompt: "Use $textbook-code-review to review this complete change set against Textbook's system rules."
