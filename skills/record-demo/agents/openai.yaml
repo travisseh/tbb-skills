@@ -1,0 +1,4 @@
+interface:
+  display_name: "Record Demo"
+  short_description: "Record a real product walkthrough"
+  default_prompt: "Use $record-demo to record the verified product flow and keep it local unless I explicitly request publication."

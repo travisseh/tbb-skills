@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adversarial Review Loop"
+  short_description: "Review changes until major findings converge"
+  default_prompt: "Use $adversarial-review-loop to independently review this change until no critical or important findings remain."

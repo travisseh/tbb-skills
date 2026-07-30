@@ -1,0 +1,13 @@
+{
+  "name": "youtube-upload-skill",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Runtime dependency for the YouTube upload skill",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "googleapis": "^173.0.0"
+  },
+  "overrides": {
+    "gaxios": "^7.3.0"
+  }
+}

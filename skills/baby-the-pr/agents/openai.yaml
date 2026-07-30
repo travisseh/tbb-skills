@@ -1,0 +1,6 @@
+interface:
+  display_name: "Baby the PR"
+  short_description: "Monitor PR feedback with a strict allowlist"
+  default_prompt: "Use $baby-the-pr to monitor the current pull request read-only and notify me of meaningful changes."
+policy:
+  allow_implicit_invocation: false

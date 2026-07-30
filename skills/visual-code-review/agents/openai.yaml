@@ -1,0 +1,4 @@
+interface:
+  display_name: "Visual Code Review"
+  short_description: "Visual reviews with diagrams and three-way code views"
+  default_prompt: "Use $visual-code-review to turn this branch into a feature-clustered review with UML diagrams and Before, Diff, and After code views."

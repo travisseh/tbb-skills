@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review Pipeline"
+  short_description: "Run a complete pre-PR quality pass"
+  default_prompt: "Use $code-review-pipeline to review and prepare this feature branch for a pull request."

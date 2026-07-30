@@ -1,0 +1,4 @@
+interface:
+  display_name: "YouTube Upload"
+  short_description: "Upload an MP4 and return YouTube links"
+  default_prompt: "Use $youtube-upload to upload this local video with the requested visibility and return watch and embed URLs."

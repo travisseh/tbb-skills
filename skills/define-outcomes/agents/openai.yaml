@@ -1,0 +1,4 @@
+interface:
+  display_name: "Define Outcomes"
+  short_description: "Turn fuzzy tasks into gradeable outcomes"
+  default_prompt: "Use $define-outcomes to define a crisp target and independently checkable rubric for this task."
