@@ -1,6 +1,6 @@
 ---
 name: tbb-plan
-description: Turn a Textbook Technology Jira ticket or feature request into the smallest safe repository-grounded implementation plan. Use before coding work that may affect legacy POS logic, Rails services, imports, money, RabbitMQ/API contracts, or multiple repositories.
+description: Turn a Textbook Brokers Jira ticket or feature request into the smallest safe repository-grounded implementation plan. Use before coding work that may affect legacy POS logic, Rails services, imports, money, RabbitMQ/API contracts, or multiple repositories.
 ---
 
 # TBB Plan

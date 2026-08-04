@@ -4,7 +4,7 @@ Reusable AI-agent skills for planning, implementation review, pull-request
 follow-through, and product demos.
 
 The root [`CLAUDE.md`](CLAUDE.md) is a concise shared-context template for the
-five Textbook Technology application repositories. Copy it into each repository
+five Textbook Brokers application repositories. Copy it into each repository
 and keep the verified repo-specific details current.
 
 ## Included skills

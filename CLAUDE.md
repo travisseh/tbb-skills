@@ -1,6 +1,6 @@
-# Textbook Technology Agent Context
+# Textbook Brokers Agent Context
 
-This is the shared starting point for Textbook Technology product repositories.
+This is the shared starting point for Textbook Brokers product repositories.
 Copy it into a repository, keep the matching repo profile, and replace any
 unknowns with verified facts. Do not put temporary ticket details here.
 

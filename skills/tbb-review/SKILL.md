@@ -1,6 +1,6 @@
 ---
 name: tbb-review
-description: Review a Textbook Technology change against its plan or defined outcomes before a pull request, including repo-specific correctness, simplification, adversarial convergence, CI, CodeRabbit, and human approval. Use after implementation and before a PR is opened or merged.
+description: Review a Textbook Brokers change against its plan or defined outcomes before a pull request, including repo-specific correctness, simplification, adversarial convergence, CI, CodeRabbit, and human approval. Use after implementation and before a PR is opened or merged.
 ---
 
 # TBB Review
